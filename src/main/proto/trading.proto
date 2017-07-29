@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package proto;
+
+import "geo.proto";
+
+option java_package = "com.bicsi.scm.models.proto";
+option java_outer_classname = "Trading";
+
+message TradeItem {
+    string collectible_id = 1;
+    int32 quantity = 2;
+}
+
+message TradeOffer {
+    repeated TradeItem required_item = 1;
+    repeated TradeItem acquired_item = 2;
+    bool is_single = 3;
+
+    // TODO: add resources to trade?
+    // TODO: are resources collectibles?
+}
+
+message TradeCenter {
+    repeated TradeOffer offer = 1;
+    Position position = 2;
+}

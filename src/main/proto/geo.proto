@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package proto;
+
+option java_package = "com.bicsi.scm.models.proto";
+option java_outer_classname = "Geo";
+
+message Position {
+    double latitude = 1;
+    double longitude = 2;
+}
+
